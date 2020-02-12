@@ -1,0 +1,21 @@
+---
+- name: Grafana service
+  systemd:
+    name: grafana-server
+    state: "{{ grafana_service_state }}"
+    enabled: "{{ grafana_service_enabled }}"
+    daemon_reload: yes
+
+- name: Grafana copy configuration
+  template:
+    src: "grafana.ini.j2"
+    dest: "/etc/grafana/grafana.ini"
+    owner: "{{ grafana_user }}"
+    group: "{{ grafana_group }}"
+
+- firewalld:
+    port: 3000/tcp
+    immediate: yes
+    permanent: yes
+    state: enabled
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
