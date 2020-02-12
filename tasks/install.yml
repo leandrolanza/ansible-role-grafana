@@ -1,0 +1,12 @@
+---
+- name: Grafana install redhat
+  yum:
+    name: grafana-{{ grafana_version }}
+    state: present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Grafana install debian
+  apt:
+    name: grafana={{ grafana_version }}
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

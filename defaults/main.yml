@@ -1,0 +1,35 @@
+---
+## General
+grafana_version: 6.6.1
+
+# start on boot
+grafana_service_enabled: True
+grafana_service_state: started
+
+## Grafana Configuration Example
+grafana_app_mode: production
+
+## Owner
+grafana_user: grafana
+grafana_group: grafana
+
+## Server
+grafana_protocol: http
+grafana_port: 3000
+grafana_domain: localhost
+
+## Database
+
+## server
+grafana_admin_user: admin
+grafana_admin_group: admin
+
+# Paths
+grafana_data_path: /var/lib/grafana
+grafana_plugins_path: "{{ grafana_data_path }}/plugins"
+grafana_log_path: /var/log/grafana
+grafana_dashboards_path: "{{ grafana_data_path }}/dashboards"
+
+## LOG
+grafana_log_mode: console file
+grafana_log_level: info

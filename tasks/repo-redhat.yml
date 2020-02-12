@@ -1,0 +1,14 @@
+---
+- name: grafana repository redhat
+  yum_repository:
+    name: grafana
+    description: grafana
+    baseurl: "{{ grafana_baseurl }}"
+    repo_gpgcheck: yes
+    enabled: yes
+    gpgcheck: yes    
+    gpgkey: "{{ grafana_gpgkey }}"
+    sslverify: yes
+    sslcacert: "{{ grafana_sslcacert }}"
+    state: present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
