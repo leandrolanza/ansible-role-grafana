@@ -27,4 +27,4 @@ BSD
 Author Information
 ------------------
 
-[Leandro Lanza:](https://github.com/leandrolanza?tab=repositories)
+[Leandro Lanza:](https://github.com/leandrolanza/ansible-role-grafana)

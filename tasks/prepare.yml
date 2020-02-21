@@ -5,7 +5,7 @@
     state: latest
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- name: upgrade all packages
+- name: upgrade all packages RHEL
   yum:
     name: '*'
     state: latest

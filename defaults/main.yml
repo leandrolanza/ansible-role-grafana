@@ -1,6 +1,6 @@
 ---
 ## General
-grafana_version: 6.6.1
+grafana_version: 6.6.2
 
 # start on boot
 grafana_service_enabled: True
